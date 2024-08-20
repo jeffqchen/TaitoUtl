@@ -51,7 +51,7 @@ The .exe file does not need installation to run.
 
 However, I have provided an INF file to install the VxD alongside the Windows utility as a system device in the TaitoUtl project. Paired with the VxD driver, the watchdog functionality will work more reliably.
 
-You can find it over [Here](https://github.com/jeffqchen/TaitoUtl)
+You can find it over [Here](https://github.com/jeffqchen/TaitoUtl/releases)
 
 -------------
 
