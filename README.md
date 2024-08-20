@@ -41,7 +41,7 @@ The About menu item will show the about information window similar to the splash
 
 This utility is designed to work with the [vwolfd VxD driver](https://github.com/jeffqchen/vwolfd) for more reliable operations. The VxD code running in the kernel space provides guaranteed time slice allotted for watchdog upkeeping as well as safer handling of output controls.
 
-However, when the VxD is found to be not present on startup, the utility will instead run in user space. The functionalities are not impacted, however, when Windows becomes very busy, the watchdog upkeeping might lapse and lead to inadvertent failing over back to a reset state.
+However, when the VxD is not present on startup, the utility will instead run all the code in user space. The functionalities are not impacted, however, when Windows becomes very busy, the watchdog upkeeping might lapse and lead to inadvertent failing over back to a reset state.
 
 -------------
 
