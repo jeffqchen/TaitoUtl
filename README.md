@@ -12,7 +12,7 @@ The Taito Wolf System arcade board shows a static splash screen when powered on.
 
 ### Watchdog Toggle
 
-The Taito Wolf System arcade board has a 3-pin output (Connector R) that connects to the PC motherboard's reset switch pins. It triggers every 64 seconds if the watchdog on the management CPLD is not kicked. This also resets the JAMMA output to the default splash screen.
+The Taito Wolf System arcade board has a 3-pin output `Connector R` that connects to the PC motherboard's reset switch pins. It triggers every `64 seconds` if the watchdog on the management CPLD is not kicked. This also resets the JAMMA output to the default splash screen.
 
 This utility provides watchdog maintenance and toggling functionality to prevent the aforementioned watchdog reset action.
 
@@ -63,25 +63,25 @@ This project is written under Visual Studio 6. You can facilitate Visual Studio 
 
 ## Technical Details
 
-The Taito Wolf System is controlled by the onboard CPLD U46. It's responsible of various funcctionalities of the system. This project invovled the video switching and hardware watchdog functionalities.
+The Taito Wolf System is controlled by the onboard `U46 CPLD`. It's responsible of various funcctionalities of the system. This project invovled the video switching and hardware watchdog functionalities.
 
 ## Video Switching
 
 The JAMMA edge video output of this board can be switched among 3 modes - Logo Splash / Test Grid / Voodoo
 
-On power up, U73 CPLD will read the splash screen data on the EPROM U71 and present it on the video output on the JAMMA video output. The output will stay in this state unless U46 CPLD received certain commands on address 0XCB600.
+On power up, `U73 CPLD` will read the splash screen data on the `U71 EPROM` and present it on the video output on the JAMMA video output. The output will stay in this state unless `U46 CPLD` received certain commands on `address 0xCB600`.
 
-From my experiments, odd numbers below 0x30 will trigger the splash screen, and even numbers below 0x30 will trigger the screen test grid screen.
+From my experiments, odd numbers below `0x30` will trigger the splash screen, and even numbers below `0x30` will trigger the screen test grid screen.
 
 When fed a value equal or greater than 0x30, the video output is switched to the 3Dfx Voodoo, which will show the actual 3D image generated. More specifically, the following values were used by the game code:
-0x30: During 3Dfx spinning logo
-0x3D: During normal gameplay
-0x31: During the test mode
+- `0x30`: During 3Dfx spinning logo
+- `0x3D`: During normal gameplay
+- `0x31`: During the test mode
 
 ## Watchdog
 
-The arcade board has a built-in timer-based watchdog that kicks in every 64 seconds to reset the video output as well as triggering connector R, which is connected to the reset pins to the PC motherboard below. In order to surpress the trigger, address 0xCB200 needs to be fed SOMETHING freqently.
+The arcade board has a built-in timer-based watchdog that kicks in every `64 seconds` to reset the video output as well as triggering `Connector R`, which is connected to the reset pins to the PC motherboard below. In order to surpress the trigger, address `0xCB200` needs to be fed SOMETHING freqently.
 
-In the game code, this address is fed 0xFF on every frame. However from the testing, it seems every few seconds is fine. Also considering not interfering with the actual game code, I settled with once per second. This value can be adjusted easily in the source code.
+In the game code, this address is fed `0xFF` on every frame. However from the testing, it seems every few seconds is fine. Also considering not interfering with the actual game code, I settled with once per second. This value can be adjusted easily in the source code.
 
-Curiously, 0xCB200 is also the 2P button data is read from. My guess is that it's not the value but the action of writing to this address that kicks the watchdog.
+Curiously, `0xCB200` is also the `2P button data` is read from, and `0xFF` means no button is pressed. My guess is that it's not the value but the action of writing to this address that kicks the watchdog.
