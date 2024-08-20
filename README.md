@@ -14,7 +14,7 @@ The Taito Wolf System arcade board shows a static splash screen when powered on.
 
 The Taito Wolf System arcade board has a 3-pin output (Connector R) that connects to the PC motherboard's reset switch pins. It triggers every 64 seconds if the watchdog on the management CPLD is not kicked. This also resets the JAMMA output to the default splash screen.
 
-This utility provides watchdog maintenance and toggling functionality.
+This utility provides watchdog maintenance and toggling functionality to prevent the aforementioned watchdog reset action.
 
 -------------
 
