@@ -1,5 +1,7 @@
 # Taito Wolf System Utility for Windows 98
 
+![splash_window](https://github.com/user-attachments/assets/6cced47d-8d85-4a3e-ac04-18ac62836c38)
+
 This is a systray application for the Taito Wolf System running Windows 98. It provides JAMMA video output switching functionality, as well as toggling the watchdog service.
 
 -------------
@@ -26,12 +28,16 @@ The utility shows a splash screen for 3 seconds, while initilizes and putting it
 
 The systray icon color indicates the state of operation of the utility:
 
+<img src="https://github.com/user-attachments/assets/e156d52a-babc-4347-9fbf-3a99a0a6080f" height=66>
+
 - Watchdog is running
   - Blue: Voodoo is output
   - Red: Logo splash screen is output
   - Yellow: Test grid screen is output
 - Watchdog is not running
   - Gray (video output switching is not available in this mode)
+
+<img src="https://github.com/user-attachments/assets/dbb62c5c-1e99-4c30-9fd0-5bea6f4f2528" height=328>
 
 When right-clicked on the icon, a pop-up menu is shown. You can choose among the 3 video output modes, and disable the watchdog just in case it's necessary.
 
