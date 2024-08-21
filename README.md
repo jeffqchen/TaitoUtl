@@ -84,6 +84,8 @@ When fed a value equal or greater than 0x30, the video output is switched to the
 - `0x3D`: During normal gameplay
 - `0x31`: During test mode
 
+<img src="https://github.com/user-attachments/assets/9470de8f-db81-4654-a347-376991d9b0f6" height=200> <img src="https://github.com/user-attachments/assets/3076411a-73fb-42cc-aa6f-83fceb98d83d" height=200> <img src="https://github.com/user-attachments/assets/6c892f61-c78e-4eac-847c-d8a5d727b11a" height=200>
+
 ## Watchdog
 
 The arcade board has a built-in timer-based watchdog that kicks in every `64 seconds` to reset the video output as well as triggering `Connector R`, which is connected to the reset pins to the PC motherboard below. In order to surpress the trigger, address `0xCB200` needs to be fed SOMETHING freqently.
