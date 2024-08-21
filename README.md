@@ -98,5 +98,5 @@ Curiously, `0xCB200` is also the `2P button data` is read from, and `0xFF` means
 
 ## Special Thanks
 
-oOkami
+oOkami (for helping me to analyse the original game code and teach me how to code :3)
 - [GitHub Page](https://github.com/mirabarukaso)
