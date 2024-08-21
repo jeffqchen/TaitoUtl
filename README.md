@@ -12,6 +12,8 @@ This is a systray application for the Taito Wolf System running Windows 98. It p
 
 The Taito Wolf System arcade board shows a static splash screen when powered on. This utility allows you to switch between different outputs (Splash / Grid / Vodooo).
 
+<img src="https://github.com/user-attachments/assets/9470de8f-db81-4654-a347-376991d9b0f6" height=200> <img src="https://github.com/user-attachments/assets/3076411a-73fb-42cc-aa6f-83fceb98d83d" height=200> <img src="https://github.com/user-attachments/assets/6c892f61-c78e-4eac-847c-d8a5d727b11a" height=200>
+
 ### Watchdog Toggle
 
 The Taito Wolf System arcade board has a 3-pin output `Connector R` that connects to the PC motherboard's reset switch pins. It triggers every `64 seconds` if the watchdog on the management CPLD is not kicked. This also resets the JAMMA output to the default splash screen.
@@ -43,11 +45,13 @@ When right-clicked on the icon, a pop-up menu is shown. You can choose among the
 
 The About menu item will show the about information window similar to the splash screen.
 
-### Normal Mode v.s. Degraded Mode
+### Static Mode v.s. Dynamic Mode
 
 This utility is designed to work with the [vwolfd VxD driver](https://github.com/jeffqchen/vwolfd) for more reliable operations. The VxD code running in the kernel space provides guaranteed time slice allotted for watchdog upkeeping as well as safer handling of output controls.
 
 However, when the VxD is not present on startup, the utility will instead run all the code in user space. The functionalities are not impacted, however, when Windows becomes very busy, the watchdog upkeeping might lapse and lead to inadvertent failing over back to a reset state.
+
+![dynamic_mode](https://github.com/user-attachments/assets/407decf0-3570-4f5f-83b2-48a83af9bc35)
 
 -------------
 
