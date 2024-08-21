@@ -47,9 +47,9 @@ The About menu item will show the about information window similar to the splash
 
 ### Static Mode v.s. Dynamic Mode
 
-This utility is designed to work with the [vwolfd VxD driver](https://github.com/jeffqchen/vwolfd) for more reliable operations. The VxD code running in the kernel space provides guaranteed time slice allotted for watchdog upkeeping as well as safer handling of output controls.
+This utility is designed to work with the [vwolfd VxD driver](https://github.com/jeffqchen/vwolfd) for more reliable operations. The VxD code running in the kernel space provides guaranteed time slice allotted for watchdog upkeeping as well as safer handling of output controls. I call this mode the static mode, thanks to the statically loaded VxD driver.
 
-However, when the VxD is not present on startup, the utility will instead run all the code in user space. The functionalities are not impacted, however, when Windows becomes very busy, the watchdog upkeeping might lapse and lead to inadvertent failing over back to a reset state.
+However, when the VxD is not present on startup, the utility will instead run all the code in user space. The functionalities are not impacted, however, when Windows becomes very busy, the watchdog upkeeping might lapse and lead to inadvertent failing over back to a reset state. I call this one the dynamic mode.
 
 ![dynamic_mode](https://github.com/user-attachments/assets/407decf0-3570-4f5f-83b2-48a83af9bc35)
 
