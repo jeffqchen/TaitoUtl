@@ -95,3 +95,8 @@ The arcade board has a built-in timer-based watchdog that kicks in every `64 sec
 In the game code, this address is fed `0xFF` on every frame. However from the testing, it seems every few seconds is fine. Also considering not interfering with the actual game code, I settled with once per second. This value can be adjusted easily in the source code.
 
 Curiously, `0xCB200` is also the `2P button data` is read from, and `0xFF` means no button is pressed. My guess is that it's not the value but the action of writing to this address that kicks the watchdog.
+
+## Special Thanks
+
+oOkami
+- [GitHub Page](https://github.com/mirabarukaso)
